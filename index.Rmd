@@ -4,7 +4,7 @@ subtitle: Shiny Applications
 author: Ramnath Vaidyanathan
 github:
   user: ramnathv
-  repo: rCharts
+  repo: rChartsShiny
 framework: minimal
 mode: selfcontained
 widgets: polycharts
@@ -179,7 +179,7 @@ shinyServer(function(input, output) {
 })
 ```
 
-Finally, we place the code required to read and process the data in `global.R` so that the data is accessible to both `ui.R` and `server.R`. You can see the resulting [Shiny app here](http://glimmer.rstudio.com/ramnathv/rChartOECD) and the [source code](rChartOECD) 
+Finally, we place the code required to read and process the data in `global.R` so that the data is accessible to both `ui.R` and `server.R`. You can see the resulting [Shiny app here](http://glimmer.rstudio.com/ramnathv/rChartOECD) and the [source code](https://github.com/ramnathv/rChartsShiny/tree/gh-pages/rChartOECD) 
 
 
 ### Notes
