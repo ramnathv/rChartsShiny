@@ -78,7 +78,7 @@ p1 <- rPlot(x = list(var = "countrycode", sort = "value"), y = "value",
   color = 'gender', data = women, type = 'bar')
 
 # Step 3. add a second layer for men, displayed as points
-p1$layer2(x = "countrycode", y = "value", color = 'gender', 
+p1$layer(x = "countrycode", y = "value", color = 'gender', 
   data = men, type = 'point', size = list(const = 3))
 
 # Step 4. format the x and y axis labels
