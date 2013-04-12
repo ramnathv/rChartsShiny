@@ -46,7 +46,7 @@ p {
 
 <h2>Data</h2>
 
-<p>The data was collected by the International Labor Organization. I used a version of the dataset put together by the excellent data visualization blog: <a href="http://thewhyaxis.info/gap-remake/">thewhyaxis</a>. I cleaned up the dataset, partially in excel and then in R to get the following (ore details on the clean up excercise in R can be found in the github repo)</p>
+<p>The data was collected by the International Labor Organization. I used a version of the dataset put together by the excellent data visualization blog: <a href="http://thewhyaxis.info/gap-remake/">thewhyaxis</a>. I cleaned up the dataset, partially in excel and then in R to get the following (more details on the clean up excercise in R can be found in the github repo)</p>
 
 <pre><code>         country countrycode year id gender value
 1           OECD        OECD 1995  1    Men   9.4
@@ -174,11 +174,12 @@ shinyServer(function(input, output) {
     men &lt;- subset(dat2m, gender == &quot;Men&quot; &amp; year == YEAR)
     women &lt;- subset(dat2m, gender == &quot;Women&quot; &amp; year == YEAR)
     p1 &lt;- rPlot(x = list(var = &quot;countrycode&quot;, sort = &quot;value&quot;), y = &quot;value&quot;, 
-      color = &#39;gender&#39;, data = women, type = &#39;bar&#39;)
+                color = &#39;gender&#39;, data = women, type = &#39;bar&#39;)
     p1$layer2(x = &quot;countrycode&quot;, y = &quot;value&quot;, color = &#39;gender&#39;, 
               data = men, type = &#39;point&#39;, size = list(const = 3))
-    p1$addParams(height = 300, dom = &#39;chart1&#39;)
-    p1$guides(x = list(ticks = unique(men$CountryCode)))
+    p1$addParams(height = 300, dom = &#39;chart1&#39;, 
+                 title = &quot;Percentage of Employed who are Senior Managers&quot;)
+    p1$guides(x = list(title = &quot;&quot;, ticks = unique(men$countrycode)))
     p1$guides(y = list(title = &quot;&quot;, max = 18))
     return(p1)
   })
@@ -186,8 +187,9 @@ shinyServer(function(input, output) {
     COUNTRY = input$country
     country = subset(dat2m, country == COUNTRY)
     p2 &lt;- rPlot(value ~ year, color = &#39;gender&#39;, type = &#39;line&#39;, data = country)
-    p2$addParams(height = 300, dom = &#39;chart2&#39;)
     p2$guides(y = list(min = 0, title = &quot;&quot;))
+    p2$guides(y = list(title = &quot;&quot;))
+    p2$addParams(height = 300, dom = &#39;chart2&#39;)
     return(p2)
   })
 })

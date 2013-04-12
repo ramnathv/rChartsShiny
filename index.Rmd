@@ -24,7 +24,7 @@ In this blog post, I will take you through the details of creating an interactiv
 
 ## Data
 
-The data was collected by the International Labor Organization. I used a version of the dataset put together by the excellent data visualization blog: [thewhyaxis](http://thewhyaxis.info/gap-remake/). I cleaned up the dataset, partially in excel and then in R to get the following (ore details on the clean up excercise in R can be found in the github repo)
+The data was collected by the International Labor Organization. I used a version of the dataset put together by the excellent data visualization blog: [thewhyaxis](http://thewhyaxis.info/gap-remake/). I cleaned up the dataset, partially in excel and then in R to get the following (more details on the clean up excercise in R can be found in the github repo)
 
 ```{r echo = F, message = F, comment = NA, warning = F}
 get_gdoc <- function(url){
