@@ -5,6 +5,7 @@ author: Ramnath Vaidyanathan
 github:
   user: ramnathv
   repo: rChartsShiny
+  branch: "gh-pages"
 framework: minimal
 mode: selfcontained
 widgets: polycharts
@@ -184,13 +185,11 @@ Finally, we place the code required to read and process the data in `global.R` s
 
 ### Notes
 
-This blog post is a github repo and is reproducible using the [slidify](http://slidify.org) package. You can download/clone this repo and run `slidify("index.Rmd")` to reproduce the entire post along with the embedded charts.
-
-Most of the implementation in `rCharts` is inspired by [rHighcharts](https://github.com/metagraf/rHighcharts) and [rVega](https://github.com/metagraf/rVega). I have reused some code from these packages verbatim, and would like to acknowledge the efforts of its author [Thomas Reinholdsson](https://github.com/reinholdsson).
+This blog post is a github repo and is reproducible using the [slidify](http://slidify.org) package. You can download/clone this repo and run `slidify("index.Rmd")` to reproduce the entire post along with the embedded charts. If you have any questions or comments, please use the [issues page](https://github.com/ramnathv/rChartsShiny/issues/new), tagging it appropriately.
 
 ### License
 
-`rCharts` is licensed under the MIT License. However, the Polycharts JavaScript library that is included in this package is not free for commercial use, and is licensed under Creative Commons 3.0 Attribution & Non-commercial. Read more about its license at http://polychart.com/js/license.
+`rCharts` is licensed under the MIT License. However, the Polycharts JavaScript library used to create these charts is not free for commercial use. You can read more about its license at http://polychart.com/js/license.
 
 
 
