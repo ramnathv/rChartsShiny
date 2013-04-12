@@ -18,9 +18,12 @@ hitheme: solarized_dark
 p {
   text-align: justify;
 }
+body {
+ background-image: url(libraries/frameworks/minimal/images/light_wool.png)
+}
 </style>
 
-In this blog post, I will take you through the details of creating an interactive visualization using [rCharts](http://ramnathv.github.io/rCharts) and [Shiny](http://rstudio.github.io/shiny). I will be attempting to replicate [this visualization](http://www.oecd.org/gender/data/proportionofemployedwhoareseniormanagersbysex.htm) of senior manager percentages by gender across countries, put together by OECD using [Tableau](http://www.tableausoftware.com).
+In this blog post, I will take you through the details of creating an interactive visualization using [rCharts](http://ramnathv.github.io/rCharts) and [Shiny](http://rstudio.github.io/shiny). I will be attempting to replicate [this visualization](http://www.oecd.org/gender/data/proportionofemployedwhoareseniormanagersbysex.htm) of senior manager percentages by gender across countries, put together by OECD using [Tableau](http://www.tableausoftware.com). Here is the [final shiny app](http://glimmer.rstudio.com/ramnathv/rChartOECD/) that we will be building.
 
 ## Data
 
