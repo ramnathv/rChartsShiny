@@ -1,4 +1,5 @@
 require(rCharts)
+options(RCHART_LIB = 'polycharts')
 shinyUI(pageWithSidebar(
   headerPanel("Percentage of Employed who are Senior Managers, by Sex"),
   
