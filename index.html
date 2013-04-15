@@ -147,6 +147,7 @@ p2$printChart()
 <p>Let us design the user interface first. Note that we need four components, two select boxes to allow the user to select the year and country, and two <code>div</code> tags to place the dynamically generated chart output.</p>
 
 <pre><code class="r">require(rCharts)
+options(RCHART_LIB = &#39;polycharts&#39;)
 shinyUI(pageWithSidebar(
   headerPanel(&quot;Percentage of Employed who are Senior Managers, by Sex&quot;),
 

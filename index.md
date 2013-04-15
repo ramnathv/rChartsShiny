@@ -147,6 +147,7 @@ Let us design the user interface first. Note that we need four components, two s
 
 ```r
 require(rCharts)
+options(RCHART_LIB = 'polycharts')
 shinyUI(pageWithSidebar(
   headerPanel("Percentage of Employed who are Senior Managers, by Sex"),
   
