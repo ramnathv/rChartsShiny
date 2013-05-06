@@ -1,4 +1,6 @@
+## @knitr server.R
 require(rCharts)
+options(RCHART_WIDTH = 800)
 shinyServer(function(input, output) {
   output$chart1 <- renderChart({
     YEAR = input$year

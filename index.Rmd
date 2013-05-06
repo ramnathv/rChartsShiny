@@ -14,6 +14,12 @@ hitheme: solarized_dark
 
 ## Interactive Visualizations with rCharts and Shiny
 
+```{r setup, echo = F}
+require(knitr)
+read_chunk('rChartOECD/ui.R'); read_chunk('rChartOECD/server.R')
+```
+
+
 <style>
 p {
   text-align: justify;
@@ -93,7 +99,7 @@ p1$addParams(width = 600, height = 300, dom = 'chart1',
   title = "Percentage of Employed who are Senior Managers")
 
 # Step 6. print the chart (just type p1 if you are using it in your R console)
-p1$printChart()
+p1$print()
 ```
 
 The first step is to create subsets of the data by gender for a specific year. We then proceed to initialize a bar plot for `women`. The function `rPlot` uses an interface very similar to the `lattice` package. The first argument specifies that the x variable is going to be `countrycode` and we want it sorted by `value`. The remaining arguments specify different aesthetics of the bar plot.
@@ -116,7 +122,7 @@ country = subset(dat2m, country == COUNTRY)
 p2 <- rPlot(value ~ year, color = 'gender', type = 'line', data = country)
 p2$addParams(width = 600, height = 300, dom = 'chart2')
 p2$guides(y = list(min = 0, title = ""))
-p2$printChart()
+p2$print()
 ```
 
 
@@ -128,28 +134,8 @@ Now that we have created the charts for a given `COUNTRY` and `YEAR`, we can go 
 
 Let us design the user interface first. Note that we need four components, two select boxes to allow the user to select the year and country, and two `div` tags to place the dynamically generated chart output.
 
-```{r eval = F}
-require(rCharts)
-options(RCHART_LIB = 'polycharts')
-shinyUI(pageWithSidebar(
-  headerPanel("Percentage of Employed who are Senior Managers, by Sex"),
-  
-  sidebarPanel(
-    selectInput(inputId = "year",
-      label = "Select year to compare countries",
-      choices = sort(unique(dat2m$year)),
-      selected = 2011),
-    selectInput(inputId = "country",
-      label = "Select country to compare years",
-      choices = sort(unique(dat2m$country)),
-      selected = "Canada")
-  ),
-  
-  mainPanel(
-    showOutput("chart1"),
-    showOutput("chart2")
-  )
-))
+```{r ref.label = 'ui.R', eval = F}
+
 ```
 
 Although the above code is self explanatory, I want to draw your attention to a couple of things. First, we choose a layout where the controls are placed in a sidebar and the charts in the main panel. Second, we generate the choices for the two selection boxes using the unique values for `year` and `country` in the dataset. Third, `showOutput` is a function in `rCharts` that creates placeholders for the generated charts, with a given id.
@@ -158,33 +144,7 @@ Although the above code is self explanatory, I want to draw your attention to a 
 
 Now that we nailed the UI, we need to tweak the plotting code to interface with the UI. To achieve this, we need to do three things. First, we need to replace COUNTRY and YEAR by `input$country` and `input$year` so that their values are dynamically obtained from user input. Second, we need to wrap the plotting calls inside `renderChart`, which is a function in `rCharts` that adds allows the plots to react to user inputs. Third, we need to assign the output of these calls to their respective elements in the UI (chart1 and chart2).
 
-```{r eval = F}
-require(rCharts)
-shinyServer(function(input, output) {
-  output$chart1 <- renderChart({
-    YEAR = input$year
-    men <- subset(dat2m, gender == "Men" & year == YEAR)
-    women <- subset(dat2m, gender == "Women" & year == YEAR)
-    p1 <- rPlot(x = list(var = "countrycode", sort = "value"), y = "value", 
-                color = 'gender', data = women, type = 'bar')
-    p1$layer2(x = "countrycode", y = "value", color = 'gender', 
-              data = men, type = 'point', size = list(const = 3))
-    p1$addParams(height = 300, dom = 'chart1', 
-                 title = "Percentage of Employed who are Senior Managers")
-    p1$guides(x = list(title = "", ticks = unique(men$countrycode)))
-    p1$guides(y = list(title = "", max = 18))
-    return(p1)
-  })
-  output$chart2 <- renderChart({
-    COUNTRY = input$country
-    country = subset(dat2m, country == COUNTRY)
-    p2 <- rPlot(value ~ year, color = 'gender', type = 'line', data = country)
-    p2$guides(y = list(min = 0, title = ""))
-    p2$guides(y = list(title = ""))
-    p2$addParams(height = 300, dom = 'chart2')
-    return(p2)
-  })
-})
+```{r ref.label = 'server.R', eval = F}
 ```
 
 Finally, we place the code required to read and process the data in `global.R` so that the data is accessible to both `ui.R` and `server.R`. You can see the resulting [Shiny app here](http://glimmer.rstudio.com/ramnathv/rChartOECD) and the [source code](https://github.com/ramnathv/rChartsShiny/tree/gh-pages/rChartOECD) 

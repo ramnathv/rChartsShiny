@@ -1,3 +1,4 @@
+## @knitr ui.R
 require(rCharts)
 options(RCHART_LIB = 'polycharts')
 shinyUI(pageWithSidebar(
@@ -15,7 +16,7 @@ shinyUI(pageWithSidebar(
   ),
   
   mainPanel(
-    showOutput("chart1"),
-    showOutput("chart2")
+    showOutput("chart1", "polycharts"),
+    showOutput("chart2", "polycharts")
   )
 ))

@@ -14,6 +14,10 @@ hitheme: solarized_dark
 
 ## Interactive Visualizations with rCharts and Shiny
 
+
+
+
+
 <style>
 p {
   text-align: justify;
@@ -90,15 +94,73 @@ p1$addParams(width = 600, height = 300, dom = 'chart1',
   title = "Percentage of Employed who are Senior Managers")
 
 # Step 6. print the chart (just type p1 if you are using it in your R console)
-p1$printChart()
+p1$print()
 ```
 
+
+<div id='chart1' class='rChart polycharts'></div>
 <script type='text/javascript'>
-    var chartParams = {"dom":"chart1","width":600,"height":300,"layers":[{"x":{"var":"countrycode","sort":"value"},"y":"value","data":{"country":["OECD","Austria","Belgium","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Luxembourg","Netherlands","Norway","Poland","Portugal","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","United Kingdom"],"countrycode":["OECD","AUT","BEL","CZE","DNK","EST","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","LUX","NLD","NOR","POL","PRT","SVK","SVN","ESP","SWE","CHE","GBR"],"year":[2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011],"id":[1,3,4,7,8,9,10,11,12,13,14,15,16,18,21,23,25,26,27,28,29,30,31,32,34],"gender":["Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women"],"value":[4.4,3,4.7,2.8,1.6,6.5,3.4,6.2,3.2,2.4,5,7.5,5.3,2.4,2.4,4.7,4.3,5.2,4.3,3.7,6.9,3.3,4,5.7,7.5]},"facet":null,"color":"gender","type":"bar"},{"x":"countrycode","y":"value","data":{"country":["OECD","Austria","Belgium","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Luxembourg","Netherlands","Norway","Poland","Portugal","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","United Kingdom"],"countrycode":["OECD","AUT","BEL","CZE","DNK","EST","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","LUX","NLD","NOR","POL","PRT","SVK","SVN","ESP","SWE","CHE","GBR"],"year":[2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011],"id":[1,3,4,7,8,9,10,11,12,13,14,15,16,18,21,23,25,26,27,28,29,30,31,32,34],"gender":["Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men"],"value":[7.7,6.8,9.2,6.2,3.8,11.6,6.8,8.6,6.4,5.4,6.3,10.4,9.3,5,5.7,9.6,8.5,6.8,7.8,6.5,9.4,6.3,6.8,9.6,12.5]},"facet":null,"color":"gender","type":"point","size":{"const":3}}],"facet":[],"guides":{"x":{"title":"","ticks":["OECD","AUT","BEL","CZE","DNK","EST","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","LUX","NLD","NOR","POL","PRT","SVK","SVN","ESP","SWE","CHE","GBR"]},"y":{"title":"","max":18}},"coord":[],"title":"Percentage of Employed who are Senior Managers","id":"chart1"}
+    var chartParams = {
+ "dom": "chart1",
+"width":    600,
+"height":    300,
+"layers": [
+ {
+ "x": {
+ "var": "countrycode",
+"sort": "value" 
+},
+"y": "value",
+"data": {
+ "country": [ "OECD", "Austria", "Belgium", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Luxembourg", "Netherlands", "Norway", "Poland", "Portugal", "Slovak Republic", "Slovenia", "Spain", "Sweden", "Switzerland", "United Kingdom" ],
+"countrycode": [ "OECD", "AUT", "BEL", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA", "LUX", "NLD", "NOR", "POL", "PRT", "SVK", "SVN", "ESP", "SWE", "CHE", "GBR" ],
+"year": [   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011 ],
+"id": [ 1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 21, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34 ],
+"gender": [ "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women" ],
+"value": [    4.4,      3,    4.7,    2.8,    1.6,    6.5,    3.4,    6.2,    3.2,    2.4,      5,    7.5,    5.3,    2.4,    2.4,    4.7,    4.3,    5.2,    4.3,    3.7,    6.9,    3.3,      4,    5.7,    7.5 ] 
+},
+"facet": null,
+"color": "gender",
+"type": "bar" 
+},
+{
+ "x": "countrycode",
+"y": "value",
+"data": {
+ "country": [ "OECD", "Austria", "Belgium", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Luxembourg", "Netherlands", "Norway", "Poland", "Portugal", "Slovak Republic", "Slovenia", "Spain", "Sweden", "Switzerland", "United Kingdom" ],
+"countrycode": [ "OECD", "AUT", "BEL", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA", "LUX", "NLD", "NOR", "POL", "PRT", "SVK", "SVN", "ESP", "SWE", "CHE", "GBR" ],
+"year": [   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011,   2011 ],
+"id": [ 1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 21, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34 ],
+"gender": [ "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men" ],
+"value": [    7.7,    6.8,    9.2,    6.2,    3.8,   11.6,    6.8,    8.6,    6.4,    5.4,    6.3,   10.4,    9.3,      5,    5.7,    9.6,    8.5,    6.8,    7.8,    6.5,    9.4,    6.3,    6.8,    9.6,   12.5 ] 
+},
+"facet": null,
+"color": "gender",
+"type": "point",
+"size": {
+ "const":      3 
+} 
+} 
+],
+"facet": [],
+"guides": {
+ "x": {
+ "title": "",
+"ticks": [ "OECD", "AUT", "BEL", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA", "LUX", "NLD", "NOR", "POL", "PRT", "SVK", "SVN", "ESP", "SWE", "CHE", "GBR" ] 
+},
+"y": {
+ "title": "",
+"max":     18 
+} 
+},
+"coord": [],
+"title": "Percentage of Employed who are Senior Managers",
+"id": "chart1" 
+}
     _.each(chartParams.layers, function(el){
         el.data = polyjs.data(el.data)
     })
-    polyjs.chart(chartParams);
+    var graph_chart1 = polyjs.chart(chartParams);
 </script>
 
 
@@ -123,15 +185,47 @@ country = subset(dat2m, country == COUNTRY)
 p2 <- rPlot(value ~ year, color = 'gender', type = 'line', data = country)
 p2$addParams(width = 600, height = 300, dom = 'chart2')
 p2$guides(y = list(min = 0, title = ""))
-p2$printChart()
+p2$print()
 ```
 
+
+<div id='chart2' class='rChart polycharts'></div>
 <script type='text/javascript'>
-    var chartParams = {"dom":"chart2","width":600,"height":300,"layers":[{"x":"year","y":"value","data":{"country":["Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada"],"countrycode":["CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN","CAN"],"year":[1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008],"id":[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],"gender":["Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Men","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women","Women"],"value":[13.2,12.8,11.7,11.2,11.6,11.7,11,11.1,10.7,11,11.1,11.2,10.9,11.3,8.4,8.8,8.1,8.2,7.4,7.5,6.9,6.6,6.8,7.2,7,7.2,7.1,7.1]},"facet":null,"color":"gender","type":"line"}],"facet":[],"guides":{"y":{"min":0,"title":""}},"coord":[],"id":"chart2"}
+    var chartParams = {
+ "dom": "chart2",
+"width":    600,
+"height":    300,
+"layers": [
+ {
+ "x": "year",
+"y": "value",
+"data": {
+ "country": [ "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada", "Canada" ],
+"countrycode": [ "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN", "CAN" ],
+"year": [   1995,   1996,   1997,   1998,   1999,   2000,   2001,   2002,   2003,   2004,   2005,   2006,   2007,   2008,   1995,   1996,   1997,   1998,   1999,   2000,   2001,   2002,   2003,   2004,   2005,   2006,   2007,   2008 ],
+"id": [ 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 ],
+"gender": [ "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Men", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women", "Women" ],
+"value": [   13.2,   12.8,   11.7,   11.2,   11.6,   11.7,     11,   11.1,   10.7,     11,   11.1,   11.2,   10.9,   11.3,    8.4,    8.8,    8.1,    8.2,    7.4,    7.5,    6.9,    6.6,    6.8,    7.2,      7,    7.2,    7.1,    7.1 ] 
+},
+"facet": null,
+"color": "gender",
+"type": "line" 
+} 
+],
+"facet": [],
+"guides": {
+ "y": {
+ "min":      0,
+"title": "" 
+} 
+},
+"coord": [],
+"id": "chart2" 
+}
     _.each(chartParams.layers, function(el){
         el.data = polyjs.data(el.data)
     })
-    polyjs.chart(chartParams);
+    var graph_chart2 = polyjs.chart(chartParams);
 </script>
 
 
@@ -163,8 +257,8 @@ shinyUI(pageWithSidebar(
   ),
   
   mainPanel(
-    showOutput("chart1"),
-    showOutput("chart2")
+    showOutput("chart1", "polycharts"),
+    showOutput("chart2", "polycharts")
   )
 ))
 ```
@@ -179,17 +273,18 @@ Now that we nailed the UI, we need to tweak the plotting code to interface with 
 
 ```r
 require(rCharts)
+options(RCHART_WIDTH = 800)
 shinyServer(function(input, output) {
   output$chart1 <- renderChart({
     YEAR = input$year
     men <- subset(dat2m, gender == "Men" & year == YEAR)
     women <- subset(dat2m, gender == "Women" & year == YEAR)
     p1 <- rPlot(x = list(var = "countrycode", sort = "value"), y = "value", 
-                color = 'gender', data = women, type = 'bar')
-    p1$layer2(x = "countrycode", y = "value", color = 'gender', 
-              data = men, type = 'point', size = list(const = 3))
+      color = 'gender', data = women, type = 'bar')
+    p1$layer(x = "countrycode", y = "value", color = 'gender', 
+      data = men, type = 'point', size = list(const = 3))
     p1$addParams(height = 300, dom = 'chart1', 
-                 title = "Percentage of Employed who are Senior Managers")
+      title = "Percentage of Employed who are Senior Managers")
     p1$guides(x = list(title = "", ticks = unique(men$countrycode)))
     p1$guides(y = list(title = "", max = 18))
     return(p1)
