@@ -11,7 +11,7 @@ shinyUI(pageWithSidebar(
       selected = 2011),
     selectInput(inputId = "country",
       label = "Select country to compare years",
-      choices = sort(unique(dat2m$country)),
+      choices = sort(unique(as.character(dat2m$country))),
       selected = "Canada")
   ),
   
