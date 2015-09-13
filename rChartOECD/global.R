@@ -4,7 +4,7 @@ get_gdoc <- function(url){
   read.csv(textConnection(s))
 }
 
-durl <- "https://docs.google.com/spreadsheet/pub?key=0AovoNzJt5GetdGxyaVlpM3ZtTVBiNjlDS0hvanVORnc&single=true&gid=0&output=csv"
+durl <- "https://docs.google.com/spreadsheets/d/1sNeW0-CuhtnXrgHxaxFgXNZhNGw0aR0SZX07fHmZbts/pub?single=true&gid=0&output=csv"
 
 dat <- get_gdoc(durl)
 dat2 <- reshape(dat, varying = names(dat)[2:35], direction = 'long', timevar = "year")
